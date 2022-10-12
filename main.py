@@ -1,8 +1,8 @@
 # Made with python3
-# (C) @FayasNoushad
+# (C) @MrAbhi2k3
 # Copyright permission under MIT License
-# All rights reserved by FayasNoushad
-# License -> https://github.com/FayasNoushad/YouTube-Search-Bot/blob/main/LICENSE
+# All rights are reserved
+# Author -> https://github.com/MrAbhi2k3
 
 import os
 import ytthumb
@@ -22,16 +22,9 @@ Bot = Client(
 
 @Bot.on_message(filters.private & filters.all)
 async def text(bot, update):
-    text = "Search youtube videos using below buttons.\n\nMade by @FayasNoushad"
-    reply_markup = InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton(text="Search here", switch_inline_query_current_chat="")],
-            [InlineKeyboardButton(text="Search in another chat", switch_inline_query="")]
-        ]
-    )
+    text = "Search youtube videos using inline mode or simply type bot Username"
     await update.reply_text(
         text=text,
-        reply_markup=reply_markup,
         disable_web_page_preview=True,
         quote=True
     )
@@ -58,11 +51,11 @@ async def search(bot, update):
         f"**Duration:** {duration_text}" + "\n" \
         f"**Views:** {views}" + "\n" \
         f"**Published Time:** {publishedtime}" + "\n" \
-        "\n" + "**Made by @FayasNoushad**"
+        "\n" + "**~ @AnyDLBot**"
         thumbnail = ytthumb.thumbnail(result["id"])
         reply_markup = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="Watch Video 📹", url=result["link"])]
+                [InlineKeyboardButton(text="🎥 Watch Video", url=result["link"])]
             ]
         )
         try:
